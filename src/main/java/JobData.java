@@ -78,7 +78,7 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
-
+            System.out.println(aValue);
             if (aValue.contains(value)) {
                 jobs.add(row);
             }
@@ -95,11 +95,59 @@ public class JobData {
      */
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
 
-        // load data, if not already loaded
-        loadData();
+ loadData();
+
+ ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+ for (HashMap<String, String> row : allJobs) {
+   //  System.out.println(row.keySet().getClass().getSimpleName());
+     //System.out.println(row.getClass().getSimpleName());
+     for (String key : row.keySet()){
+        // System.out.println(key);
+        // System.out.println(row.get(key));
+         //System.out.println(key);
+         String aValue = row.get(key);
+         //System.out.println(aValue);
+         if (aValue.toLowerCase().contains(value.toLowerCase())) {
+             jobs.add(row);
+             break;
+
+         }
+     }
+ /*String aValue = row.get();
+ System.out.println(aValue);
+ if (aValue.contains(value)) {
+ jobs.add(row);
+ }*/
+ }
+
+ return jobs;
+
+
+
+ // load data, if not already loaded
+        /*loadData();
 
         // TODO - implement this method
         return null;
+
+        ArrayList<HashMap>String, String>> allJobs = new ArrayList<>();
+        for (HashMap<String, String> allJobsData : allJobs){
+            boolean contains = false;
+            for (String matchValue : allJobsData.values()){
+                if (matchValue.toUpperCase().contains(value.toUpperCase())){
+                    contains = true;
+                }
+                if (contains == true) {
+                    if (!allJobs.contains(allJobsData)) {
+                        allJobs.add(allJobsData);
+
+                    }
+                }
+            }
+        }
+     */
+
     }
 
     /**
