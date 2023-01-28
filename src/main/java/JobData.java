@@ -110,6 +110,7 @@ public class JobData {
          //System.out.println(aValue);
          if (aValue.toLowerCase().contains(value.toLowerCase())) {
              jobs.add(row);
+
              break;
 
          }
