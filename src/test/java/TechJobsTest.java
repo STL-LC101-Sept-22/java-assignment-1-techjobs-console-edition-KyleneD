@@ -39,7 +39,8 @@ public class TechJobsTest {
 
     @Test
     public void testPrintJobs() throws IOException {
-        String input = "0\n2\nBuzzbold\nx";
+        String input = "0" +
+                "0\n2\nBuzzbold\nx";
         String output = runProgramWithInput(input);
         String expected = getFileContents("src/test/resources/testPrintJobs.txt");
         assertEquals(expected, output);
